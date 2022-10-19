@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <p>Total Expenses: {{ totalExpenses | currency }}</p>
+  <p>Budget: $1000</p>
+  <div class="progress col-8 offset-2">
+    <div
+      class="progress-bar"
+      role="progressbar"
+      aria-label="Basic example"
+      aria-valuenow="0"
+      aria-valuemin="0"
+      aria-valuemax="1000"
+      style="width: {{ (totalExpenses / 1000) * 100 }}%"
+    ></div>
+  </div>
+</div>

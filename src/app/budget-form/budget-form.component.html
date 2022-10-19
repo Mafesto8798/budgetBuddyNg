@@ -1,0 +1,44 @@
+<div class="container text-center">
+  <form (ngSubmit)="submitForm()" #form="ngForm" class="d-flex flex-column">
+    <label for="amount">Amount: </label>
+    <input
+      type="number"
+      min="1"
+      class="col-6 offset-3"
+      required
+      name="amount"
+      #amount="ngModel"
+      id="amount"
+      [(ngModel)]="formAmount"
+    />
+    <label for="desc">Description: </label>
+    <input
+      type="text"
+      class="col-6 offset-3"
+      required
+      name="desc"
+      minlength="3"
+      #desc="ngModel"
+      id="desc"
+      [(ngModel)]="formDesc"
+    />
+    <label for="category">Category: </label>
+    <select
+      class="col-6 offset-3"
+      required
+      name="category"
+      #category="ngModel"
+      id="category"
+      [(ngModel)]="formCategory"
+    >
+      <option value="" name="category">Select one...</option>
+      <option value="Food" name="category">Food</option>
+      <option value="Clothing" name="category">Clothing</option>
+      <option value="Bills" name="category">Bills</option>
+      <option value="Entertainment" name="category">Entertainment</option>
+    </select>
+    <button type="submit" class="col-6 offset-3" [disabled]="form.invalid">
+      Submit
+    </button>
+  </form>
+</div>

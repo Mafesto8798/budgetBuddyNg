@@ -1,0 +1,9 @@
+<div class="container text-center">
+  <div class="col-12">
+    <div *ngFor="let e of displayExpenses" class="row">
+      <p class="col-4">{{ e.description }}</p>
+      <p class="col-4">{{ e.category }}</p>
+      <p class="col-4">{{ e.amount | currency }}</p>
+    </div>
+  </div>
+</div>
